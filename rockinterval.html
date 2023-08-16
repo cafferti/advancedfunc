@@ -63,6 +63,29 @@
    
 
     <script>
+     
+        let  isautoplaying = false
+         
+
+        function  autoplay(){ 
+            if(!isautoplaying){
+
+            }
+             setInterval(function(){
+             const playermove = randome();
+             console.log(playermove)
+             let cmpick = randome()
+             console.log(cmpick)
+             argument(playermove)
+             
+             },1000)
+            function updateStats() {
+        
+        }
+
+        }
+        
+
 
 
         let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 };
@@ -70,23 +93,6 @@
 
         let result = ''; // Declare the result variable globally
         cmpick = ``;
-
-
-
-        function  autoplay(){ 
-             setInterval(function(){
-             const playermove = randome();
-             let cmpick = randome()
-             argument(playermove)
-             
-             },1000)
-            function updateStats() {
-        
-            document.querySelector('.stats').innerHTML = `win.${score.wins} lost ${score.losses}  tie.${score.ties}`;
-        }
-
-        }
-        
 
              computermove = randome()
              
@@ -104,6 +110,7 @@
  
                  return cmpick;
              }
+            
  
 
         function argument(playermove) {
