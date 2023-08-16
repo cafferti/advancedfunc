@@ -51,20 +51,26 @@
 
 
             // SETTIMEOUTin javascript
-       setTimeout(function(){console.log(`timeout`)},3000)
-       console.log(`nextline`)
+    //    setTimeout(function(){console.log(`timeout`)},3000)
+    //    console.log(`nextline`)
 
-       setInterval(function(){console.log(`interval`)}, 3000);
+    //    setInterval(function(){console.log(`interval`)}, 3000);
 
-       function execute(perform){
-           perform()
-       }
+
+
+    //    function execute(perform){
+    //        perform()
+    //    }
 
        const exfunc = () =>{
-        console.log(`call me back`)
+        console.log(`call me back"`)
        }
 
-       execute(exfunc)
+       setInterval( exfunc, 2000);
+
+
+
+       
 
 
 

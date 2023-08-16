@@ -56,18 +56,21 @@
     <p class="js-moves"><img src="" alt=""></p>
     <p class="stats score"></p>
     <button class="reset-btn" onclick="reset()">Reset score</button>
-    <button class="auto-btn"  onclick=" autoplay " >Auto play</button>
+    <button class="auto-btn"  onclick=" autoplay() " >Auto play</button>
     
     
 
    
 
     <script>
-        function  autoplay(){
-          setInterval(function(){
-            const playermove = randome()
-            argument();
-          },1000)
+
+
+        function  autoplay(){ 
+             setInterval(function(){
+             let playermove = computermove;
+             argument(playermove)
+             updateStats
+             },1000)
         }
 
 
@@ -79,6 +82,9 @@
         cmpick = ``;
 
         function argument(playermove) {
+             
+            computermove = randome()
+             
             function randome() { 
                 const rdom = Math.random();
             
@@ -94,7 +100,7 @@
                 return cmpick;
             }
 
-            randome()
+            
              
             if (playermove === 'rock') {
                 if (cmpick === 'rock') {
