@@ -9,6 +9,8 @@
     <h1>Advanced Functions</h1>
     
     <script>
+
+        
         function greeting(){
             console.log(`hello`)
         }
@@ -52,7 +54,17 @@
        setTimeout(function(){console.log(`timeout`)},3000)
        console.log(`nextline`)
 
-       setInterval(function(){console.log(`interval`)}, 3000)
+       setInterval(function(){console.log(`interval`)}, 3000);
+
+       function execute(perform){
+           perform()
+       }
+
+       const exfunc = () =>{
+        console.log(`call me back`)
+       }
+
+       execute(exfunc)
 
 
 
