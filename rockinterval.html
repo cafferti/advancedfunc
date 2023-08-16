@@ -65,42 +65,49 @@
     <script>
 
 
-        function  autoplay(){ 
-             setInterval(function(){
-             let playermove = computermove;
-             argument(playermove)
-             updateStats
-             },1000)
-        }
-
-
-
         let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0, ties: 0 };
         updateStats();
 
         let result = ''; // Declare the result variable globally
         cmpick = ``;
 
+
+
+        function  autoplay(){ 
+             setInterval(function(){
+             const playermove = randome();
+             let cmpick = randome()
+             argument(playermove)
+             
+             },1000)
+            function updateStats() {
+        
+            document.querySelector('.stats').innerHTML = `win.${score.wins} lost ${score.losses}  tie.${score.ties}`;
+        }
+
+        }
+        
+
+             computermove = randome()
+             
+             function randome() { 
+                 const rdom = Math.random();
+             
+ 
+                 if (rdom >= 0 && rdom < 1/3) {
+                     cmpick = 'rock';
+                 } else if (rdom >= 1/3 && rdom < 2/3) { 
+                     cmpick = 'paper';
+                 } else if (rdom >= 2/3 && rdom < 1) {
+                     cmpick = 'scissors';
+                 }
+ 
+                 return cmpick;
+             }
+ 
+
         function argument(playermove) {
-             
-            computermove = randome()
-             
-            function randome() { 
-                const rdom = Math.random();
-            
-
-                if (rdom >= 0 && rdom < 1/3) {
-                    cmpick = 'rock';
-                } else if (rdom >= 1/3 && rdom < 2/3) { 
-                    cmpick = 'paper';
-                } else if (rdom >= 2/3 && rdom < 1) {
-                    cmpick = 'scissors';
-                }
-
-                return cmpick;
-            }
-
-            
+              
              
             if (playermove === 'rock') {
                 if (cmpick === 'rock') {
