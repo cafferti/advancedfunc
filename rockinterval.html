@@ -64,25 +64,31 @@
 
     <script>
      
-        let  isautoplaying = false
+        let isautoplaying = false
+        let  Intervalid ;
+        
          
 
         function  autoplay(){ 
             if(!isautoplaying){
-
-            }
-             setInterval(function(){
+            Intervalid = setInterval(function(){
              const playermove = randome();
              console.log(playermove)
              let cmpick = randome()
              console.log(cmpick)
              argument(playermove)
-             
+            
              },1000)
-            function updateStats() {
-        
-        }
 
+             isautoplaying = true
+             
+            }else {
+              clearInterval(Intervalid)
+              isautoplaying = false
+            }
+
+            
+            
         }
         
 
