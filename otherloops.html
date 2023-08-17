@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+  <h1>for each</h1>  
 </body>
 <script>
     [`make dinner`, `wash dinners`, `catch bug`]
@@ -14,5 +14,14 @@
        console.log(value);
        console.log(index)
     });
+
+
+    let ourarray =  [`make dinner`, `wash dinners`, `catch bug`]
+     ourarray.forEach (function(value, index){
+        if(value === `make dinner`){
+            return
+        }
+        console.log(value)
+     })
 </script>
 </html>
