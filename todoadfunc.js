@@ -18,6 +18,13 @@ function displaytodolist() {
   localStorage.setItem(`todolist`, JSON.stringify(todolist));
   document.querySelector(`.js-todo`).innerHTML = todolistHtml;
 }
+//adding event listener
+ document.querySelector(`.js-addbtn`).addEventListener(`click`,()=>{addtodo()})
+ document.body.addEventListener(`keydown`, (event)=>{
+  if(event.key === `Enter`){
+    addtodo()
+  }
+ })
 
 function addtodo() {
   const inpElement = document.querySelector(`.js-input`);
