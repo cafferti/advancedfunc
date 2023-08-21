@@ -11,12 +11,22 @@ function displaytodolist() {
     const html = `
     <div>${task}</div>
     <div>${duedate}</div>
-    <button onclick="todolist.splice(${index}, 1); displaytodolist();">Delete</button>
+    <button class = "js-deletebtn">Delete</button>
   `;
     todolistHtml += html;
   });
   localStorage.setItem(`todolist`, JSON.stringify(todolist));
   document.querySelector(`.js-todo`).innerHTML = todolistHtml;
+
+ //adding event listener for delete button
+ //queryselectorall targets all the buttons with that class not only the first
+ //it craetes and object containing all the buttons with that class on the page
+ document.querySelectorAll(`.js-deletebtn`)
+ .forEach((deletebtn, index)=>{
+       deletebtn.addEventListener(`click`, () =>{ todolist.splice(index, 1); displaytodolist();})
+ });
+
+ 
 }
 //adding event listener
  document.querySelector(`.js-addbtn`).addEventListener(`click`,()=>{addtodo()})
@@ -25,6 +35,8 @@ function displaytodolist() {
     addtodo()
   }
  })
+ //adding event listener
+ 
 
 function addtodo() {
   const inpElement = document.querySelector(`.js-input`);
