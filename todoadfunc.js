@@ -5,7 +5,7 @@ displaytodolist();
 function displaytodolist() {
   let todolistHtml = ``;
 
-  todolist.forEach(function (todoobject, index) {
+  todolist.forEach( (todoobject, index) => {
     const task = todoobject.name;
     const duedate = todoobject.duedate;
     const html = `
