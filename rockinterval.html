@@ -94,6 +94,16 @@
 
       //ADDING EVENT LISTENERS
 
+      //ADDING EVENTLISTENERS TO USE KEYBOARD TO PLAY
+       document.body.addEventListener(`keydown`, (event) =>{
+        if(event.key ===`r`){argument(`rock`)
+        }else if(event.key === `s`){argument(`scissors`)
+        }else if(event.key === `p`){argument(`paper`)
+        }else if(event.key === ` `){autoplay()}
+       })
+      //ADDING EVENTLISTENERS TO USE KEYBOARD TO PLAY
+
+
       let score = JSON.parse(localStorage.getItem("score")) || {
         wins: 0,
         losses: 0,
