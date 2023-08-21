@@ -48,13 +48,13 @@
   <body>
     <h1>Rock Paper Scissors</h1>
 
-    <button class="game-icons" onclick="argument('rock')">
+    <button class="game-icons js-rockbtn">
       <img class="gameimg" src="./rock-emoji.png" alt="" />
     </button>
-    <button class="game-icons" onclick="argument('scissors')">
+    <button class="game-icons js-scissorsbtn">
       <img class="gameimg" src="./scissors-emoji.png" alt="" />
     </button>
-    <button class="game-icons" onclick="argument('paper')">
+    <button class="game-icons js-paperbtn">
       <img class="gameimg" src="./paper-emoji.png" alt="" />
     </button>
     <p class="js-result result"></p>
@@ -69,7 +69,7 @@
 
       function autoplay() {
         if (!isautoplaying) {
-          Intervalid = setInterval( () => {
+          Intervalid = setInterval(() => {
             const playermove = randome();
             console.log(playermove);
             let cmpick = randome();
@@ -84,6 +84,20 @@
         }
       }
 
+      document.querySelector(".js-rockbtn").addEventListener("click", () => {
+        argument("rock");
+      });
+
+      document
+        .querySelector(".js-scissorsbtn")
+        .addEventListener("click", () => {
+          argument("scissors");
+        });
+
+      document.querySelector(".js-paperbtn").addEventListener("click", () => {
+        argument("paper");
+      });
+
       let score = JSON.parse(localStorage.getItem("score")) || {
         wins: 0,
         losses: 0,
@@ -97,6 +111,7 @@
       computermove = randome();
 
       function randome() {
+        let cmpick = "";
         const rdom = Math.random();
 
         if (rdom >= 0 && rdom < 1 / 3) {
@@ -111,6 +126,9 @@
       }
 
       function argument(playermove) {
+        cmpick = randome(); // Generate a new computer move
+
+
         if (playermove === "rock") {
           if (cmpick === "rock") {
             result = "tie";
