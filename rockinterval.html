@@ -84,19 +84,15 @@
         }
       }
 
-      document.querySelector(".js-rockbtn").addEventListener("click", () => {
-        argument("rock");
-      });
+      //ADDING EVENTLISTENESR
 
-      document
-        .querySelector(".js-scissorsbtn")
-        .addEventListener("click", () => {
-          argument("scissors");
-        });
+      document.querySelector(`.js-rockbtn`).addEventListener(`click`, () => {argument(`rock`); });
 
-      document.querySelector(".js-paperbtn").addEventListener("click", () => {
-        argument("paper");
-      });
+      document.querySelector(`.js-scissorsbtn`).addEventListener(`click`, () => {argument("scissors"); });
+
+      document.querySelector(`.js-paperbtn`).addEventListener(`click`, () => { argument("paper");});
+
+      //ADDING EVENT LISTENERS
 
       let score = JSON.parse(localStorage.getItem("score")) || {
         wins: 0,
