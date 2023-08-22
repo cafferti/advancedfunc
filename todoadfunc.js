@@ -26,6 +26,8 @@ function displaytodolist() {
        deletebtn.addEventListener(`click`, () =>{ todolist.splice(index, 1); displaytodolist();})
  });
 
+ //the deletebtn refers to the variable of which each itemm of the array is being assighn too  for every iteration4
+
  
 }
 //adding event listener
